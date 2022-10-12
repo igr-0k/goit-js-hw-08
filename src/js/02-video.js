@@ -6,8 +6,8 @@ const iframe = document.querySelector('iframe');
 const player = new Player(iframe);
 player.on(
   'timeupdate',
-  throttle(data => {
-    localStorage.setItem('Player-Current-Time', data.seconds);
+  throttle(e => {
+    localStorage.setItem('Player-Current-Time', e.seconds);
   }, 1000)
 );
 
